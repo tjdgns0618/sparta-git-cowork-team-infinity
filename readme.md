@@ -2,13 +2,18 @@
 
 Git 커밋 협업을 통한 팀원 소개 페이지 프로젝트입니다.
 
-[양성훈 md 바로가기](/members/YSH.md)
-
-양성훈 : README 정리
-문승주 : members/MSJ.md
-박진영 : members/PJY.md
-윤사라 : members/YSR.md
-강재구 : members/KJG.md
+- [양성훈의 md 바로가기](/members/YSH.md)
+- [문승주의 md 바로가기](/members/MSJ.md)
+- [박진영의 md 바로가기](/members/PJY.md)
+- [윤사라의 md 바로가기](/members/YSR.md)
+- [강재구의 md 바로가기](/members/KJG.md)
+ 
+    
+- 양성훈 : README 정리
+- 문승주 : members/MSJ.md
+- 박진영 : members/PJY.md
+- 윤사라 : members/YSR.md
+- 강재구 : members/KJG.md
 
 # PR 작성 규칙 (기본 과제)
 ### 제목
