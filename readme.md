@@ -9,6 +9,15 @@ Git 커밋 협업을 통한 팀원 소개 페이지 프로젝트입니다.
 윤사라 : members/YSR.md
 강재구 : members/KJG.md
 
+# PR 작성 규칙
+### 제목
+- [Docs] {이니셜}.md
+### 내용
+- 어떤 디렉토리에 무슨 파일을 작업하였는지 적기
+- 무슨 내용인지 한줄요약
+- 작업 브랜치 (feature/YSH -> main)
+- 리뷰어한테 확인 부탁하고싶은거
+
 
 ![main image](./image/main.png)
 
