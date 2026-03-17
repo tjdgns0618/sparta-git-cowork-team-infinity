@@ -2,7 +2,16 @@
 
 Git 커밋 협업을 통한 팀원 소개 페이지 프로젝트입니다.
 
+
+양성훈 : README 정리
+문승주 : members/MSJ.md
+박진영 : members/PJY.md
+윤사라 : members/YSR.md
+강재구 : members/KJG.md
+
+
 ![main image](./image/main.png)
+
 
 ## 프로젝트 구조
 
