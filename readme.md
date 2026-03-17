@@ -2,6 +2,7 @@
 
 Git 커밋 협업을 통한 팀원 소개 페이지 프로젝트입니다.
 
+[양성훈 md 바로가기](/members/YSH.md)
 
 양성훈 : README 정리
 문승주 : members/MSJ.md
