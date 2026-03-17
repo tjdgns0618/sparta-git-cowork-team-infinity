@@ -1,0 +1,23 @@
+{
+  "name": "박진영",
+  "subName": "백엔드 개발자",
+  "profileImage": "image/p1.png",
+  "introduction": {
+    "quote": "백엔드 개발자를 목표로 하고있습니다",
+    "detail": "잘 부탁 드립니다"
+  },
+  "info": {
+    "description": "간단한 소개",
+    "birthday": "2001.01.13",
+    "location": "서울시 동대문구",
+    "email": "jy030506@naver.com",
+    "phone": "010-1234-5678",
+    "link": "https://blog.naver.com/jy030506"
+  },
+  "strengths": ["의사소통", "도전 정신", "끈기"],
+  "skills": [
+    { "name": "HTML", "progress": 3 },
+    { "name": "Spring", "progress": 5 },
+    { "name": "JavaScript", "progress": 5 }
+  ]
+}
