@@ -1,0 +1,23 @@
+{
+  "name": "양성훈",
+  "subName": "백엔드 개발자",
+  "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMAgUBuKG8vBvL3nv89KJI7VRE0Rp3mPuhKWPqD6rWKxoqMsjsk1yTE19rGoQN7-dS0Q2na7N3xYpVaKPBILybHG9yMali9x2tu3mG6Q&s=10",
+  "introduction": {
+    "quote": "자기소개 한 줄",
+    "detail": "게임 개발 게발로 하다가 도망쳐나온 사람입니다."
+  },
+  "info": {
+    "description": "간단한 소개",
+    "birthday": "2001.06.18",
+    "location": "광주광역시",
+    "email": "gruddufs@gmail.com",
+    "phone": "010-4136-4618",
+    "link": "https://www.notion.so/Notion-31a4c25c0b028059b083ff8371aabc4e"
+  },
+  "strengths": ["의사소통", "도전 정신", "리더십"],
+  "skills": [
+    { "name": "HTML", "progress": 2 },
+    { "name": "CSS", "progress": 2 },
+    { "name": "JavaScript", "progress": 5 }
+  ]
+}
