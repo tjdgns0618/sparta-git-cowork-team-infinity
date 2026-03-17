@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scccurri.github.io/portfolio/index.html" />
+    <meta property="og:title" content="팀원 소개" />
+    <meta property="og:image" content="image/OGimage.png" />
+    <meta property="og:description" content="팀원 소개 페이지입니다." />
+    <meta property="og:site_name" content="Team Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>팀원 소개</title>
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        :root {
+            --main-organization-color: #222425;
+            --sub-organization-color: #d3d3d3;
+            --main-svg-filter: invert(12%) sepia(6%) saturate(445%) hue-rotate(156deg) brightness(99%) contrast(94%);
+            --main-bg-color: #f5f5f5;
+            --main-font-color: #222425;
+            --secondary-font-color: #5f666b;
+            --highlight-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.25);
+        }
+
+        .font-regular {
+            font-family: "NanumSquareOTF-Regular", Helvetica;
+            font-weight: 400;
+        }
+
+        .svg-filter {
+            filter: var(--main-svg-filter);
+        }
+
+        .font-bold {
+            font-family: "NanumSquareOTF-ExtraBold", Helvetica;
+            font-weight: 700;
+        }
+
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
+        }
+
+        .size-full {
+            width: 100%;
+            height: 100%;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("image/bg.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .background {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .frame {
+            max-width: 93.75rem;
+            width: 100%;
+            height: auto;
+            position: relative;
+            display: flex;
+            margin: 0 auto;
+            align-items: flex-start;
+            padding: 0 2rem;
+        }
+
+        .main-content {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .team-title {
+            color: var(--main-font-color);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .team-subtitle {
+            color: var(--secondary-font-color);
+            font-size: 1.2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .member-card {
+            background-color: var(--highlight-color);
+            border-radius: 1.25rem;
+            box-shadow: 0 0.25rem 0.25rem var(--shadow-color);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem var(--shadow-color);
+        }
+
+        .member-profile {
+            width: 12rem;
+            height: 12rem;
+            background-color: #d9d9d9;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .member-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .member-name {
+            color: var(--main-font-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-subname {
+            color: var(--secondary-font-color);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-intro {
+            color: var(--secondary-font-color);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--main-organization-color);
+            color: var(--highlight-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+        }
+
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--secondary-font-color);
+            font-size: 1.2rem;
+        }
+
+        .error {
+            text-align: center;
+            padding: 3rem;
+            color: #d32f2f;
+            font-size: 1.2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .team-title {
+                font-size: 2rem;
+            }
+
+            .team-subtitle {
+                font-size: 1rem;
+            }
+
+            .member-card {
+                padding: 1.5rem;
+            }
+
+            .member-profile {
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="w-full">
+    <div class="background w-full">
+        <div class="frame w-full">
+            <div class="main-content">
+                <div class="team-header">
+                    <h1 class="team-title font-bold">팀원 소개</h1>
+                    <p class="team-subtitle font-regular">함께 성장하는 우리 팀을 만나보세요</p>
+                </div>
+
+                <div id="team-container" class="team-grid">
+                    <div class="loading">팀원 정보를 불러오는 중...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // members 디렉토리에서 모든 JSON 파일 목록을 가져오는 함수
+        async function loadTeamMembers() {
+            const container = document.getElementById('team-container');
+            container.innerHTML = '<div class="loading">팀원 정보를 불러오는 중...</div>';
+
+            try {
+                // members 디렉토리의 파일 목록을 가져오기
+                // 실제로는 서버에서 파일 목록을 제공하거나, 
+                // members.json에 팀원 목록을 저장하는 방식을 사용할 수 있습니다.
+                
+                // 예시: members.json 파일에 팀원 목록이 있다고 가정
+                const membersListResponse = await fetch('members/members.json');
+                
+                if (!membersListResponse.ok) {
+                    // members.json이 없으면 example.json만 로드
+                    const exampleMember = await loadMemberData('members/example.json');
+                    if (exampleMember) {
+                        renderMemberCard(exampleMember, container);
+                    }
+                    return;
+                }
+
+                const membersList = await membersListResponse.json();
+                const memberFiles = membersList.members || ['example.json'];
+
+                // 각 팀원 정보 로드
+                const members = [];
+                for (const file of memberFiles) {
+                    try {
+                        const member = await loadMemberData(`members/${file}`);
+                        if (member) {
+                            members.push(member);
+                        }
+                    } catch (error) {
+                        console.error(`Failed to load ${file}:`, error);
+                    }
+                }
+
+                // 팀원 카드 렌더링
+                container.innerHTML = '';
+                if (members.length === 0) {
+                    container.innerHTML = '<div class="error">팀원 정보를 찾을 수 없습니다.</div>';
+                    return;
+                }
+
+                members.forEach(member => {
+                    renderMemberCard(member, container);
+                });
+
+            } catch (error) {
+                console.error('Error loading team members:', error);
+                container.innerHTML = '<div class="error">팀원 정보를 불러오는 중 오류가 발생했습니다.</div>';
+            }
+        }
+
+        // 개별 팀원 JSON 파일 로드
+        async function loadMemberData(filePath) {
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    return null;
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error(`Error loading ${filePath}:`, error);
+                return null;
+            }
+        }
+
+        // 팀원 카드 렌더링
+        function renderMemberCard(member, container) {
+            const card = document.createElement('div');
+            card.className = 'member-card';
+
+            // 프로필 이미지
+            const profileImg = member.profileImage || 'image/profile_image.png';
+            
+            // 주요 스킬 (최대 5개)
+            const topSkills = member.skills
+                ? member.skills
+                    .sort((a, b) => (b.progress || 0) - (a.progress || 0))
+                    .slice(0, 5)
+                    .map(skill => skill.name)
+                : [];
+
+            // 자기소개 요약
+            const introText = member.introduction?.detail || member.introduction?.quote || '';
+
+            card.innerHTML = `
+                <div class="member-profile">
+                    <img src="${profileImg}" alt="${member.name}" onerror="this.src='image/profile_image.png'" />
+                </div>
+                <div class="member-name font-bold">${member.name || '이름 없음'}</div>
+                <div class="member-subname font-regular">${member.subName || ''}</div>
+                <div class="member-intro font-regular">${introText}</div>
+                <div class="member-skills">
+                    ${topSkills.map(skill => `<span class="skill-tag font-regular">${skill}</span>`).join('')}
+                </div>
+            `;
+
+            container.appendChild(card);
+        }
+
+        // 페이지 로드 시 팀원 정보 불러오기
+        document.addEventListener('DOMContentLoaded', loadTeamMembers);
+    </script>
+</body>
+
+</html>

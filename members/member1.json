@@ -1,0 +1,68 @@
+{
+  "id": "member1",
+  "name": "김개발",
+  "subName": "프론트엔드 개발자",
+  "profileImage": "image/profile_image.png",
+  "introduction": {
+    "quote": "사용자 경험을 중시하는\n프론트엔드 개발자입니다.",
+    "detail": "사용자 중심의 인터페이스를 설계하고 구현하는 것을 좋아합니다. React와 TypeScript를 활용하여 안정적이고 확장 가능한 웹 애플리케이션을 개발하고 있습니다. 팀과의 협업을 통해 더 나은 제품을 만들어가고 싶습니다."
+  },
+  "info": {
+    "description": "React와 TypeScript를 활용하여 프론트엔드 개발을 하고 있습니다.",
+    "birthday": "1998.03.20",
+    "location": "서울시 강남구",
+    "email": "member1@example.com",
+    "phone": "010-1111-1111"
+  },
+  "strengths": [
+    "창의성",
+    "협업",
+    "문제해결"
+  ],
+  "skills": [
+    { "name": "HTML", "progress": 80 },
+    { "name": "CSS", "progress": 85 },
+    { "name": "JavaScript", "progress": 90 },
+    { "name": "React", "progress": 85 },
+    { "name": "TypeScript", "progress": 75 }
+  ],
+  "licenses": [
+    "정보처리기사"
+  ],
+  "education": [
+    {
+      "name": "스파르타 고등학교",
+      "period": "2014.03.02 ~ 2017.02.14",
+      "location": "서울시 강남구"
+    },
+    {
+      "name": "스파르타 대학교",
+      "period": "2017.03.02 ~ 2021.02.20",
+      "gpa": "4.0",
+      "location": "서울시 강남구"
+    }
+  ],
+  "experience": [
+    {
+      "period": "1년",
+      "company": "테크스타트업",
+      "term": "2022.01~2023.01",
+      "team": "프론트엔드팀, 주니어 개발자",
+      "task": "React 기반 웹 애플리케이션 개발",
+      "project": {
+        "name": "고객 대시보드 개발 프로젝트",
+        "term": "2022.03~2022.12",
+        "detail": "React와 TypeScript를 사용한 대시보드 UI 개발 및 상태 관리 최적화"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "title": "쇼핑몰 웹사이트",
+      "description": "React와 Node.js를 활용한 전자상거래 플랫폼을 개발했습니다. 사용자 인증, 상품 관리, 결제 시스템을 구현하여 안정적인 쇼핑 경험을 제공합니다.",
+      "image": "image/p1.png",
+      "link": "project.html"
+    }
+  ]
+}
+

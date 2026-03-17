@@ -1,0 +1,69 @@
+{
+  "id": "member5",
+  "name": "정데이터",
+  "subName": "데이터 분석가",
+  "profileImage": "image/profile_image.png",
+  "introduction": {
+    "quote": "데이터로 인사이트를 찾는\n데이터 분석가입니다.",
+    "detail": "대용량 데이터를 분석하여 비즈니스 인사이트를 도출하는 것을 전문으로 합니다. Python과 SQL을 활용하여 데이터를 처리하고 시각화하며, 머신러닝 모델을 구축하여 예측 분석을 수행합니다."
+  },
+  "info": {
+    "description": "Python과 SQL을 활용하여 데이터 분석을 하고 있습니다.",
+    "birthday": "1997.09.25",
+    "location": "서울시 영등포구",
+    "email": "member5@example.com",
+    "phone": "010-5555-5555"
+  },
+  "strengths": [
+    "분석력",
+    "체계성",
+    "객관성"
+  ],
+  "skills": [
+    { "name": "Python", "progress": 90 },
+    { "name": "SQL", "progress": 85 },
+    { "name": "R", "progress": 70 },
+    { "name": "Tableau", "progress": 75 },
+    { "name": "Machine Learning", "progress": 65 }
+  ],
+  "licenses": [
+    "ADsP",
+    "SQLD"
+  ],
+  "education": [
+    {
+      "name": "스파르타 고등학교",
+      "period": "2013.03.02 ~ 2016.02.14",
+      "location": "서울시 영등포구"
+    },
+    {
+      "name": "스파르타 대학교",
+      "period": "2016.03.02 ~ 2020.02.20",
+      "gpa": "4.1",
+      "location": "서울시 영등포구"
+    }
+  ],
+  "experience": [
+    {
+      "period": "1년 3개월",
+      "company": "데이터 분석 회사",
+      "term": "2021.10~2023.01",
+      "team": "데이터팀, 주니어 분석가",
+      "task": "데이터 분석 및 리포트 작성",
+      "project": {
+        "name": "고객 행동 분석 프로젝트",
+        "term": "2022.03~2022.11",
+        "detail": "Python과 머신러닝을 활용한 고객 세그멘테이션 및 추천 시스템 개발"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "title": "대시보드 개발",
+      "description": "비즈니스 지표를 시각화하는 대시보드를 개발했습니다. Python과 Tableau를 활용하여 실시간 데이터를 모니터링하고, 주요 지표를 한눈에 볼 수 있도록 구현했습니다.",
+      "image": "image/p1.png",
+      "link": "project.html"
+    }
+  ]
+}
+
