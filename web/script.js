@@ -4,8 +4,10 @@ const memberFileMap = {
     member2: "../members/PJY.json",
     member3: "../members/YSR.json",
     member4: "../members/KJG.json",
+    // member5: "../members/CJH.json", // 필요 시 추가
 };
 
+// DOM Elements
 const modal = document.getElementById("memberModal");
 const modalProfileImage = document.getElementById("modalProfileImage");
 const modalName = document.getElementById("modalName");
@@ -24,176 +26,113 @@ const modalTilLink = document.getElementById("modalTilLink");
 
 const memberData = {};
 
+// --- 다크모드 로직 ---
+const toggleBtn = document.getElementById('darkModeToggle');
+const modeIcon = toggleBtn.querySelector('.mode-icon');
+
+function updateModeIcon(theme) {
+    modeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateModeIcon(savedTheme);
+}
+
+toggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateModeIcon(newTheme);
+});
+
+// --- 데이터 로딩 로직 ---
 function normalizeProfileImage(imagePath) {
-    if (!imagePath) {
-        return "https://via.placeholder.com/100";
-    }
-
-    const isAbsolutePath = imagePath.startsWith("http://") || imagePath.startsWith("https://");
-
-    if (isAbsolutePath) {
-        return imagePath;
-    }
-
+    if (!imagePath) return "https://via.placeholder.com/100";
+    if (imagePath.startsWith("http")) return imagePath;
     return `../members/${imagePath.replace(/^\.?\//, "")}`;
 }
 
-function getCardElement(memberId) {
-    return document.querySelector(`[data-member-id="${memberId}"]`);
-}
-
 function applyMemberToCard(memberId, member) {
-    const card = getCardElement(memberId);
+    const card = document.querySelector(`[data-member-id="${memberId}"]`);
+    if (!card || !member) return;
 
-    if (!card || !member) {
-        return;
-    }
+    card.querySelector(".member-name").textContent = member.name || "";
+    card.querySelector(".member-role").textContent = member.subName || "";
+    card.querySelector(".member-intro").textContent = member.introduction?.quote || "";
 
-    const nameElement = card.querySelector(".member-name");
-    const roleElement = card.querySelector(".member-role");
-    const introElement = card.querySelector(".member-intro");
-    const imageElement = card.querySelector(".member-image img");
-
-    if (nameElement) {
-        nameElement.textContent = member.name ?? "";
-    }
-
-    if (roleElement) {
-        roleElement.textContent = member.subName ?? "";
-    }
-
-    if (introElement) {
-        introElement.textContent = member.introduction?.quote ?? "";
-    }
-
-    if (imageElement) {
-        imageElement.src = normalizeProfileImage(member.profileImage);
-        imageElement.alt = `${member.name} 프로필 이미지`;
-    }
+    const img = card.querySelector(".member-image img");
+    img.src = normalizeProfileImage(member.profileImage);
+    img.alt = `${member.name} 프로필 이미지`;
 }
 
-function hideUnmappedCards() {
-    const cards = document.querySelectorAll("[data-member-id]");
-
-    cards.forEach((card) => {
-        const memberId = card.dataset.memberId;
-
-        if (!memberFileMap[memberId]) {
-            card.style.display = "none";
-        }
-    });
-}
-
-function renderStrengths(strengths = []) {
-    modalStrengths.innerHTML = "";
-
-    strengths.forEach((strength) => {
-        const item = document.createElement("li");
-        item.textContent = strength;
-        modalStrengths.appendChild(item);
-    });
-}
-
-function renderSkills(skills = []) {
-    modalSkills.innerHTML = "";
-
-    skills.forEach((skill) => {
-        const item = document.createElement("span");
-        const skillName = typeof skill === "string" ? skill : skill.name;
-        const skillProgress = typeof skill === "object" && skill.progress !== undefined ? ` ${skill.progress}%` : "";
-
-        item.textContent = `${skillName}${skillProgress}`;
-        item.style.display = "inline-block";
-        item.style.margin = "0 8px 8px 0";
-        item.style.padding = "6px 10px";
-        item.style.border = "1px solid #ddd";
-        item.style.fontSize = "13px";
-
-        modalSkills.appendChild(item);
+function renderList(container, items, isSkill = false) {
+    container.innerHTML = "";
+    items?.forEach(item => {
+        const el = document.createElement(isSkill ? "span" : "li");
+        const text = typeof item === "string" ? item : `${item.name}${item.progress ? ` ${item.progress}%` : ""}`;
+        el.textContent = text;
+        container.appendChild(el);
     });
 }
 
 function applyMemberToModal(member) {
     modalProfileImage.src = normalizeProfileImage(member.profileImage);
-    modalProfileImage.alt = `${member.name} 프로필 이미지`;
-    modalName.textContent = member.name ?? "";
-    modalSubName.textContent = member.subName ?? "";
-    modalQuote.textContent = member.introduction?.quote ?? "";
-    modalDetail.textContent = member.introduction?.detail ?? "";
-    modalDescription.textContent = member.info?.description ?? "";
-    modalBirthday.textContent = member.info?.birthday ?? "";
-    modalLocation.textContent = member.info?.location ?? "";
-    modalEmail.textContent = member.info?.email ?? "";
-    modalPhone.textContent = member.info?.phone ?? "";
+    modalName.textContent = member.name || "";
+    modalSubName.textContent = member.subName || "";
+    modalQuote.textContent = member.introduction?.quote || "";
+    modalDetail.textContent = member.introduction?.detail || "";
+    modalDescription.textContent = member.info?.description || "";
+    modalBirthday.textContent = member.info?.birthday || "";
+    modalLocation.textContent = member.info?.location || "";
+    modalEmail.textContent = member.info?.email || "";
+    modalPhone.textContent = member.info?.phone || "";
 
-    const linkValue = member.info?.link ?? "";
-    modalLink.href = linkValue || "#";
-    modalLink.textContent = linkValue || "링크 없음";
+    const link = member.info?.link || "#";
+    modalLink.href = link;
+    modalLink.textContent = member.info?.link || "링크 없음";
+    modalTilLink.href = member.info?.til || link; // TIL 링크 우선 적용
 
-    modalTilLink.href = linkValue || "#";
-
-    renderStrengths(member.strengths);
-    renderSkills(member.skills);
+    renderList(modalStrengths, member.strengths);
+    renderList(modalSkills, member.skills, true);
 }
 
 async function loadMemberData() {
     const entries = Object.entries(memberFileMap);
-
-    await Promise.all(
-        entries.map(async ([memberId, path]) => {
-            try {
-                const response = await fetch(path);
-
-                if (!response.ok) {
-                    throw new Error(`${path} ${response.status}`);
-                }
-
-                memberData[memberId] = await response.json();
-                applyMemberToCard(memberId, memberData[memberId]);
-            } catch (error) {
-                console.error(`멤버 데이터 로드 실패: ${memberId}`, error);
-            }
-        })
-    );
+    await Promise.all(entries.map(async ([id, path]) => {
+        try {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error();
+            memberData[id] = await res.json();
+            applyMemberToCard(id, memberData[id]);
+        } catch (e) {
+            console.error(`로드 실패: ${id}`);
+            document.querySelector(`[data-member-id="${id}"]`).style.display = "none";
+        }
+    }));
 }
 
-async function openModal(memberId) {
-    if (!Object.keys(memberData).length) {
-        await loadMemberData();
+window.openModal = async (id) => {
+    if (!memberData[id]) await loadMemberData();
+    const member = memberData[id];
+    if (member) {
+        applyMemberToModal(member);
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
     }
+};
 
-    const member = memberData[memberId];
-
-    if (!member) {
-        alert("해당 멤버 데이터가 아직 연결되지 않았습니다.");
-        return;
-    }
-
-    applyMemberToModal(member);
-
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-}
-
-function closeModal() {
+window.closeModal = () => {
     modal.style.display = "none";
     document.body.style.overflow = "";
-}
+};
 
-window.openModal = openModal;
-window.closeModal = closeModal;
-
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        closeModal();
-    }
-});
-
-window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.style.display === "flex") {
-        closeModal();
-    }
-});
-
-hideUnmappedCards();
+// 초기화
+initTheme();
 loadMemberData();
+
+// 모달 외부 클릭 시 닫기
+modal.addEventListener("click", e => e.target === modal && closeModal());
