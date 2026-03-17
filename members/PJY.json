@@ -1,0 +1,54 @@
+{
+  "id": "PJY",
+  "name": "박진영",
+  "subName": "백엔드 개발자",
+  "profileImage": "image/jyp-profile.png",
+  "introduction": {
+    "quote": "백엔드 개발자를 목표로 하고있습니다.",
+    "detail": "잘 부탁 드립니다"
+  },
+  "info": {
+    "description": "간단한 소개",
+    "birthday": "2001.01.13",
+    "location": "서울시 동대문구",
+    "email": "jy030506@naver.com",g
+    "phone": "010-0000-0000"
+  },
+  "strengths": ["의사소통", "도전 정신", "참여율"],
+  "skills": [
+    { "name": "HTML", "progress": 10 },
+    { "name": "CSS", "progress": 10 },
+    { "name": "JavaScript", "progress": 15 }
+  ],
+  "licenses": ["해당 없음"],
+  "education": [
+    {
+      "name": "한성 대학교",
+      "period": "2019.03.02 ~ 2025.08.20",
+      "gpa": "3.0",
+      "location": "서울 "
+    }
+  ],
+  "experience": [
+    {
+      "period": "해당 없음",
+      "company": "해당 없음",
+      "term": "해당 없음",
+      "team": "해당 없음",
+      "task": "해당 없음",
+      "project": {
+        "name": "해당 없음",
+        "term": "해당 없음",
+        "detail": "해당 없음"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "title": "대학교 캡스톤",
+      "description": "약 알람 앱",
+      "image": "image/jyp-profile.png",
+      "link": "project.html"
+    }
+  ]
+}
