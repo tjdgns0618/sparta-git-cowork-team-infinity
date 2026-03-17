@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8조 Infinity - 팀 소개</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 메인 컨테이너 -->
+    <div class="container">
+        
+        <!-- 팀 헤더 섹션 -->
+        <header class="team-header">
+            <h1 class="team-title">팀명 : 8조 Infinity</h1>
+            <!-- [수정 가능] 팀 소개글 - 아래 p 태그 내용을 수정하세요 -->
+            <p class="team-description">무한히 성장하는 팀입니다.</p>
+            <!-- [수정 가능 끝] -->
+        </header>
+
+        <!-- 팀원 카드 섹션 -->
+        <section class="team-members">
+            
+            <!-- 팀장 카드 (상단 전체 너비) -->
+            <div class="leader-row">
+                <article class="member-card leader-card" data-member-id="leader" onclick="openModal('leader')">
+                    <div class="card-content">
+                        <div class="member-info">
+                            <span class="leader-badge">팀장</span>
+                            <h2 class="member-name">양성훈</h2>
+                            <p class="member-role">백엔드 개발자</p>
+                            <p class="member-intro">자기소개 한 줄</p>
+                        </div>
+                        <div class="member-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMAgUBuKG8vBvL3nv89KJI7VRE0Rp3mPuhKWPqD6rWKxoqMsjsk1yTE19rGoQN7-dS0Q2na7N3xYpVaKPBILybHG9yMali9x2tu3mG6Q&s=10" alt="양성훈 프로필 이미지">
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 팀원 카드 5개 (하단 일렬 배치) -->
+            <div class="members-row">
+                <!-- 팀원 1 -->
+                <article class="member-card" data-member-id="member1" onclick="openModal('member1')">
+                    <div class="card-content">
+                        <div class="member-info">
+                            <h2 class="member-name">김철수</h2>
+                            <p class="member-role">프론트엔드 개발자</p>
+                            <p class="member-intro">UI/UX에 관심이 많습니다.</p>
+                        </div>
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/100" alt="김철수 프로필 이미지">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 팀원 2 -->
+                <article class="member-card" data-member-id="member2" onclick="openModal('member2')">
+                    <div class="card-content">
+                        <div class="member-info">
+                            <h2 class="member-name">이영희</h2>
+                            <p class="member-role">디자이너</p>
+                            <p class="member-intro">아름다운 디자인을 추구합니다.</p>
+                        </div>
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/100" alt="이영희 프로필 이미지">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 팀원 3 -->
+                <article class="member-card" data-member-id="member3" onclick="openModal('member3')">
+                    <div class="card-content">
+                        <div class="member-info">
+                            <h2 class="member-name">박민수</h2>
+                            <p class="member-role">풀스택 개발자</p>
+                            <p class="member-intro">무엇이든 만들 수 있습니다.</p>
+                        </div>
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/100" alt="박민수 프로필 이미지">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 팀원 4 -->
+                <article class="member-card" data-member-id="member4" onclick="openModal('member4')">
+                    <div class="card-content">
+                        <div class="member-info">
+                            <h2 class="member-name">정수진</h2>
+                            <p class="member-role">기획자</p>
+                            <p class="member-intro">사용자 경험을 중시합니다.</p>
+                        </div>
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/100" alt="정수진 프로필 이미지">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 팀원 5 -->
+                <article class="member-card" data-member-id="member5" onclick="openModal('member5')">
+                    <div class="card-content">
+                        <div class="member-info">
+                            <h2 class="member-name">최준호</h2>
+                            <p class="member-role">데이터 분석가</p>
+                            <p class="member-intro">데이터로 인사이트를 발굴합니다.</p>
+                        </div>
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/100" alt="최준호 프로필 이미지">
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+        <!-- 상세정보 모달 -->
+        <div id="memberModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                
+                <!-- 모달 헤더 -->
+                <div class="modal-header">
+                    <img id="modalProfileImage" class="modal-profile-image" src="" alt="프로필 이미지">
+                    <div class="modal-header-info">
+                        <h2 id="modalName" class="modal-name"></h2>
+                        <p id="modalSubName" class="modal-subname"></p>
+                        <p id="modalQuote" class="modal-quote"></p>
+                    </div>
+                </div>
+
+                <!-- 상세 소개 -->
+                <div class="modal-section">
+                    <h3>소개</h3>
+                    <p id="modalDetail" class="modal-detail"></p>
+                </div>
+
+                <!-- 기본 정보 -->
+                <div class="modal-section">
+                    <h3>기본 정보</h3>
+                    <ul class="modal-info-list">
+                        <li><strong>설명:</strong> <span id="modalDescription"></span></li>
+                        <li><strong>생년월일:</strong> <span id="modalBirthday"></span></li>
+                        <li><strong>지역:</strong> <span id="modalLocation"></span></li>
+                        <li><strong>이메일:</strong> <span id="modalEmail"></span></li>
+                        <li><strong>연락처:</strong> <span id="modalPhone"></span></li>
+                        <li><strong>링크:</strong> <a id="modalLink" href="" target="_blank"></a></li>
+                    </ul>
+                </div>
+
+                <!-- 강점 -->
+                <div class="modal-section">
+                    <h3>강점</h3>
+                    <ul id="modalStrengths" class="modal-strengths"></ul>
+                </div>
+
+                <!-- 스킬 -->
+                <div class="modal-section">
+                    <h3>스킬</h3>
+                    <div id="modalSkills" class="modal-skills"></div>
+                </div>
+
+                <!-- TIL 바로가기 버튼 -->
+                <div class="modal-footer">
+                    <a id="modalTilLink" href="" class="til-button">TIL 바로가기</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>
