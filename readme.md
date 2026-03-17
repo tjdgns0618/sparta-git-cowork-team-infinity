@@ -18,6 +18,63 @@ Git 커밋 협업을 통한 팀원 소개 페이지 프로젝트입니다.
 - 작업 브랜치 (feature/YSH -> main)
 - 리뷰어한테 확인 부탁하고싶은거
 
+# JSON 작성 규칙
+```
+{
+  "name": "홍길동",
+  "subName": "풀스택 개발자",
+  "profileImage": "image/your-profile.png",
+  "introduction": {
+    "quote": "자기소개 한 줄",
+    "detail": "자기소개 상세 내용"
+  },
+  "info": {
+    "description": "간단한 소개",
+    "birthday": "2000.01.01",
+    "location": "서울시 강남구",
+    "email": "your.email@example.com",
+    "phone": "010-1234-5678",
+    "link": "til 링크"
+  },
+  "strengths": ["의사소통", "도전 정신", "리더십"],
+  "skills": [
+    { "name": "HTML", "progress": 10 },
+    { "name": "CSS", "progress": 10 },
+    { "name": "JavaScript", "progress": 15 }
+  ]
+}
+```
+
+# 도전과제 파트
+## 전체적인 느낌
+- 세련된 블랙 화이트
+- 팀원 카드
+- 팀원 카드 클릭시 상세정보 모달로 띄우기
+- 팀원 카드 : 이름, 담당파트, 한줄 소개
+- 상세정보 모달 : md 문서 내용 json으로 정리해서 받아오기, TIL 바로가기 버튼
+- 상위 타이틀에 팀명, 팀 소개글
+
+## 진행 순서
+- json 작성
+1. html 로 페이지 틀 잡기
+2. 승주님 받은 파일로 브랜치 만들어서 css 적용하고 PR, 머지시키기
+3. 진영님 받은 파일로 브랜치 만들어서 카드 클릭 js 적용하고 PR, 머지시키기
+5. 사라님 받은 파일로 브랜치 만들어서 모달 띄우기 JS 적용하고 PR, 머지시키기
+6. 재구님 받은 파일로 브랜치 만들어서 JSON 내용 카드, 모달 내용으로 불러오기
+
+`풀리퀘스트` `코드 리뷰` `머지되는지`
+
+### 양성훈
+- HTML
+### 문승주
+- CSS
+### 박진영
+- JS 카드 클릭
+### 윤사라
+- JS 모달 띄우기
+### 강재구
+- JS 폴더에 있는 json 불러오기 web  ../members/...json
+
 
 ![main image](./image/main.png)
 
