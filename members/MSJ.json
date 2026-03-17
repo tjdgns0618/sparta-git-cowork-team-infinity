@@ -1,0 +1,23 @@
+{
+  "name": "문승주",
+  "subName": "풀스택 개발자",
+  "profileImage": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA0MDNfMjky%2FMDAxNDkxMjA1ODY1NDY4.Ohd-sa0PIT7alfQXFE4zfYLwKqL5sDHDJbYqoocRKmYg.GaEjHVSJ4uE9HYMdstpHEj9LdcuYXwm6XxuOs-uxIfog.JPEG.arimmm2%2F%25B0%25CB%25C0%25BA%25BB%25F665.jpg&type=sc960_832",
+  "introduction": {
+    "quote": "배우면서 성장합니다!",
+    "detail": "꾸준히 발전 중이에요."
+  },
+  "info": {
+    "description": "배우는 것을 즐기며 꾸준히 성장하는 개발자입니다.",
+    "birthday": "2004.05.04",
+    "location": "경기도 안산시",
+    "email": "m.oonseungjoo0405@gmail.com",
+    "phone": "010-6272-4026",
+    "link": "https://mooncommit-dev.tistory.com/"
+  },
+  "strengths": ["의사소통", "도전 정신", "열정"],
+  "skills": [
+    { "name": "HTML", "progress": 10 },
+    { "name": "CSS", "progress": 10 },
+    { "name": "JavaScript", "progress": 15 }
+  ]
+}
