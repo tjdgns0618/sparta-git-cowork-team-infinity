@@ -1,0 +1,23 @@
+{
+  "name": "윤사라",
+  "subName": "newbie 개발자",
+  "profileImage": "https://i.pinimg.com/control1/1200x/9b/94/68/9b9468e22ac32b5a0b1d759e6b8ce5d7.jpg",
+  "introduction": {
+    "quote": "아직 아무것도 모르는 사람\uD83D\uDC25",
+    "detail": "저는 회사에 다닐 당시 지금 배우는 것과 아예 다른 직업을 가졌었습니다. 아무것도 모르지만 같이 잘 해보아요~~!!"
+  },
+  "info": {
+    "description": "간단한 소개",
+    "birthday": "2002.10.21",
+    "location": "전주",
+    "email": "prinsaraouo@gmail.com",
+    "phone": "비@@밀",
+    "link": "https://www.notion.so/prinsara/Today-I-Learned-31a3f5ea51028015ab78cb8d4263d2e7?source=copy_link"
+  },
+  "strengths": ["소통", "피드백", "리더십 약간"],
+  "skills": [
+    { "name": "HTML", "progress": 2 },
+    { "name": "CSS", "progress": 1 },
+    { "name": "JavaScript", "progress": 1 }
+  ]
+}
